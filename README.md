@@ -14,3 +14,11 @@ pip install theano
 ```
 pip install pybrain
 ```
+### Install matplotlib
+```
+pip install matplotlib
+```
+### Install nntools
+```
+pip install git+https://github.com/craffel/nntools.git
+```
