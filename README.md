@@ -10,3 +10,7 @@ pip install hg+http://bitbucket.org/pygame/pygame
 ```
 pip install theano
 ```
+### Install pybrain
+```
+pip install pybrain
+```
