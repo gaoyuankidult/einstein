@@ -3,4 +3,6 @@
 
 # Install dependences
 ## Intall pygame
-'''pip install hg+http://bitbucket.org/pygame/pygame
+```
+pip install hg+http://bitbucket.org/pygame/pygame
+```
