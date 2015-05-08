@@ -1,0 +1,26 @@
+__author__ = 'gao'
+import pygame
+
+
+class Joystick(object):
+    def __init__(self):
+        pygame.joystick.init()
+        self.joysticks = [pygame.joystick.Joystick(x) for x in range(pygame.joystick.get_count())]
+
+
+class FormulaForceEx(Joystick):
+    def __init__(self):
+        super(FormulaForceEx, self).__init__()
+        assert not len(self.joysticks) == 1:
+	self.ex = self.joysticks[0]
+
+    def show_wheel_value(self):
+	num_axes = self.ex.get_numaxes()
+	axes_value = self.ex.get_axes()
+	print axes_value
+        
+
+
+if __name__=="__main__":
+    j = Joystick()
+
