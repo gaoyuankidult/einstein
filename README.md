@@ -22,3 +22,7 @@ pip install matplotlib
 ```
 pip install git+https://github.com/craffel/nntools.git
 ```
+### Install zmp
+```
+pip install pyzmq
+```
