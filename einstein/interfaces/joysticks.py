@@ -1,8 +1,8 @@
 __author__ = 'gao'
 import pygame
+import einstein as E
 from threading import Timer
-
-
+from threading import Lock
 
 
 class Joystick(object):
@@ -21,25 +21,36 @@ class FormulaForceEx(Joystick):
         assert len(self.joysticks) == 1
         self.ex = self.joysticks[0]
         self.ex.init()  # initialize the wheel
+        self.t = None  # thread
+        self.wheel_value = None
+        self.lock = Lock()
 
-    def show_wheel_value(self):
-        # EVENT PROCESSING STEP
+    def update_wheel_value(self, times=None):
+        """
+        Indicates how many times will function show in 1 second
+        :param times:
+        :return:
+        """
+        if times is not None:
+            self.t = Timer(1./times, self.update_wheel_value, [times]).start()
         for event in pygame.event.get(): # User did something
             if event.type == pygame.QUIT: # If user clicked close
                 pass
-        axis_value_0 = self.ex.get_axis(0)
-        print "Axis {} value: {:>6.3f}".format(0, axis_value_0)
+        with self.lock:
+            self.wheel_value = self.ex.get_axis(0)
+        print "Axis {} value: {:>6.3f}".format(0, self.wheel_value)
 
-    def read_wheel_value(self, times):
-        """
-        :param times: indicate how many time will wheel values be read per second
-        :return:
-        """
-        self.t = Timer(1./times, self.show_wheel_value)
-        self.t.start()
-        raw_input()
+    def terminate_wheel_monitor(self):
+        E.tools.check_none_join(self.t)
+
+    def get_wheel_value(self):
+        with self.lock:
+            self.wheel_value = self.ex.get_axis(0)
+        return self.wheel_value
 
     def __del__(self):
         super(FormulaForceEx, self).__del__()
-        self.t.join()
+        self.terminate_wheel_monitor()
+
+
 

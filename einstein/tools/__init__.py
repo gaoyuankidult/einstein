@@ -10,6 +10,7 @@ from misc import save_to_pickle_file
 from misc import load_pickle_file
 from misc import array_form
 from misc import running_cumsum
+from misc import check_none_join
 from data_structures import RingBuffer
 from numpy import random
 from numpy import array

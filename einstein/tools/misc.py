@@ -65,6 +65,18 @@ def running_cumsum(data, n):
         final_data += data[i::n]
     return final_data/float(n)
 
+def check_none_join(value):
+    """
+    check whether value is none or not. If it is, then do nothing else delete
+    :param value:
+    :return:
+    """
+    if value is None:
+        pass
+    else:
+        value.join()
+
+
 class TestPickleMethods(unittest.TestCase):
 
     def test_pickle(self):

@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+from setuptools import find_packages
 from distutils.core import setup
 
 setup(name='einstein',
@@ -8,5 +8,5 @@ setup(name='einstein',
       author='Yuan Gao',
       author_email='gaoyuankidult@gmail.com',
       url='',
-      packages=['einstein'],
-     )
+      packages=find_packages(),
+      )
