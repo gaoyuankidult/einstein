@@ -1,0 +1,6 @@
+librlglue_la-RL_direct_experiment.lo: RL_direct_experiment.c \
+ /usr/include/stdc-predef.h ../config/config.h
+
+/usr/include/stdc-predef.h:
+
+../config/config.h:

@@ -1,0 +1,4 @@
+einstein.egg-info/PKG-INFO
+einstein.egg-info/SOURCES.txt
+einstein.egg-info/dependency_links.txt
+einstein.egg-info/top_level.txt

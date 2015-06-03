@@ -1,0 +1,6 @@
+librlglue_la-RL_direct_environment.lo: RL_direct_environment.c \
+ /usr/include/stdc-predef.h ../config/config.h
+
+/usr/include/stdc-predef.h:
+
+../config/config.h:

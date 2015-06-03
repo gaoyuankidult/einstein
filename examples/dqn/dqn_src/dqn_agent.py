@@ -1,0 +1,599 @@
+#! /usr/bin/env python
+
+import copy
+import os
+import cPickle
+from rlglue.agent.Agent import Agent
+from rlglue.agent import AgentLoader as AgentLoader
+from rlglue.types import Action
+from rlglue.types import Observation
+from rlglue.utils import TaskSpecVRLGLUE3
+import time
+
+import random
+import numpy as np
+import cv2
+
+import argparse
+
+import matplotlib.pyplot as plt
+
+from deep_q_network import DeepQNetwork
+from einstein.layers import Flatten
+from einstein.layers import Dense, Convolution2D, MaxPooling2D
+from einstein.layers.activations import Activation
+from einstein.regularizers import Dropout
+from einstein.optimizers import SGD
+
+import theano
+
+import pyximport;
+pyximport.install()
+import shift
+
+import sys
+sys.setrecursionlimit(10000)
+
+floatX = theano.config.floatX
+
+IMAGE_WIDTH = 160
+IMAGE_HEIGHT = 210
+
+CROPPED_WIDTH = 84
+CROPPED_HEIGHT = 84
+
+# Number of rows to crop off the bottom of the (downsampled) screen.
+# This is appropriate for breakout, but it may need to be modified
+# for other games.
+CROP_OFFSET = 8
+
+
+class DataSet(object):
+    """ Class represents a data set that stores a fixed-length history.
+    """
+
+    def __init__(self, width, height, max_steps=1000, phi_length=4,
+                 capacity=None):
+        """  Construct a DataSet.
+
+        Arguments:
+            width,height - image size
+            max_steps - the length of history to store.
+            phi_length - number of images to concatenate into a state.
+            capacity - amount of memory to allocate (just for debugging.)
+        """
+
+        self.count = 0
+        self.max_steps = max_steps
+        self.phi_length = phi_length
+        if capacity == None:
+            self.capacity = max_steps + int(max_steps * .1)
+        else:
+            self.capacity = capacity
+        self.states = np.zeros((self.capacity, height, width), dtype='uint8')
+        self.actions = np.zeros(self.capacity, dtype='int32')
+        self.rewards = np.zeros(self.capacity, dtype=floatX)
+        self.terminal = np.zeros(self.capacity, dtype='bool')
+
+
+    def _min_index(self):
+        return max(0, self.count - self.max_steps)
+
+    def _max_index(self):
+        return self.count - (self.phi_length + 1)
+
+    def __len__(self):
+        """ Return the total number of avaible data items. """
+        return max(0, (self._max_index() - self._min_index()) + 1)
+
+    def add_sample(self, state, action, reward, terminal):
+        self.states[self.count, ...] = state
+        self.actions[self.count] = action
+        self.rewards[self.count] = reward
+        self.terminal[self.count] = terminal
+        self.count += 1
+
+        # Shift the final max_steps back to the beginning.
+        if self.count == self.capacity:
+            roll_amount = self.capacity - self.max_steps
+            shift.shift3d_uint8(self.states, roll_amount)
+            self.actions = np.roll(self.actions, -roll_amount)
+            self.rewards = np.roll(self.rewards, -roll_amount)
+            self.terminal = np.roll(self.terminal, -roll_amount)
+            self.count = self.max_steps
+
+    def no_terminal(self, start, end):
+        """ Make sure that a possible phi does not cross a trial boundary.
+        """
+        # start and end are inclusive
+        return np.alltrue(np.logical_not(self.terminal[start:end+1]))
+
+    def last_phi(self):
+        """
+        Return the most recent phi.
+        """
+        phi = self._make_phi(self.count - self.phi_length)
+        return  np.array(phi, dtype=floatX)
+
+    def phi(self, state):
+        """
+        Return a phi based on the latest image, by grabbing enough
+        history from the data set to fill it out.
+        """
+        phi = np.empty((self.phi_length,
+                        self.states.shape[1],
+                        self.states.shape[2]),
+                       dtype=floatX)
+
+        phi[0:(self.phi_length-1), ...] = self.last_phi()[1::]
+        phi[self.phi_length-1, ...] = state
+        return phi
+
+    def _make_phi(self, index):
+        end_index = index + self.phi_length - 1
+        #assert self.no_terminal(index, end_index)
+        return self.states[index:end_index + 1, ...]
+
+    def _empty_batch(self, batch_size):
+        # Set aside memory for the batch
+        states = np.empty((batch_size, self.phi_length,
+                           self.states.shape[1], self.states.shape[2]),
+                          dtype=floatX)
+        actions = np.empty((batch_size, 1), dtype='int32')
+        rewards = np.empty((batch_size, 1), dtype=floatX)
+        terminals = np.empty((batch_size, 1), dtype=bool)
+
+        next_states = np.empty((batch_size, self.phi_length,
+                                self.states.shape[1],
+                                self.states.shape[2]), dtype=floatX)
+        return states, actions, rewards, terminals, next_states
+
+    def batch_iterator(self, batch_size):
+        """ Generator for iterating over all valid batches. """
+        index = self._min_index()
+        batch_count = 0
+        states, actions, rewards, terminals, next_states = \
+                self._empty_batch(batch_size)
+        while index <= self._max_index():
+            end_index = index + self.phi_length - 1
+            if self.no_terminal(index, end_index):
+                states[batch_count, ...] = self._make_phi(index)
+                actions[batch_count, 0] = self.actions[end_index]
+                rewards[batch_count, 0] = self.rewards[end_index]
+                terminals[batch_count, 0] = self.terminal[end_index+1]
+                next_states[batch_count, ...] = self._make_phi(index+1)
+                batch_count += 1
+            index += 1
+
+            if batch_count == batch_size:
+                yield states, actions, rewards, terminals, next_states
+                batch_count = 0
+                states, actions, rewards, terminals, next_states = \
+                    self._empty_batch(batch_size)
+
+
+    def random_batch(self, batch_size):
+
+        count = 0
+        states, actions, rewards, terminals, next_states = \
+            self._empty_batch(batch_size)
+
+        # Grab random samples until we have enough
+        while count < batch_size:
+            index = np.random.randint(self._min_index(), self._max_index()+1)
+            end_index = index + self.phi_length - 1
+            if self.no_terminal(index, end_index):
+                states[count, ...] = self._make_phi(index)
+                actions[count, 0] = self.actions[end_index]
+                rewards[count, 0] = self.rewards[end_index]
+                terminals[count, 0] = self.terminal[end_index+1]
+                next_states[count, ...] = self._make_phi(index+1)
+                count += 1
+
+        return states, actions, rewards, next_states, terminals
+
+class NeuralAgent(Agent):
+    randGenerator=random.Random()
+
+    def __init__(self):
+        """
+        Mostly just read command line arguments here. We do this here
+        instead of agent_init to make it possible to use --help from
+        the command line without starting an experiment.
+        """
+
+        # Handle command line argument:
+        parser = argparse.ArgumentParser(description='Neural rl agent.')
+        parser.add_argument('--learning_rate', type=float, default=.0002,
+                            help='Learning rate')
+        parser.add_argument('--rms_decay', type=float, default=.99,
+                            help='Decay rate for rms_prop')
+        parser.add_argument('--momentum', type=float, default=0,
+                            help='Momentum term for Nesterov momentum.')
+        parser.add_argument('--discount', type=float, default=.95,
+                            help='Discount rate')
+        parser.add_argument('--epsilon_start', type=float, default=1.0,
+                            help='Starting value for epsilon.')
+        parser.add_argument('--epsilon_min', type=float, default=0.1,
+                            help='Minimum epsilon.')
+        parser.add_argument('--epsilon_decay', type=float, default=1000000,
+                            help='Number of steps to minimum epsilon.')
+        parser.add_argument('--phi_length', type=int, default=4,
+                            help='History length')
+        parser.add_argument('--max_history', type=int, default=1000000,
+                            help='Maximum number of steps stored')
+        parser.add_argument('--batch_size', type=int, default=32,
+                            help='Batch size')
+        parser.add_argument('--exp_pref', type=str, default="",
+                            help='Experiment name prefix')
+        parser.add_argument('--nn_file', type=str, default=None,
+                            help='Pickle file containing trained net.')
+        parser.add_argument('--pause', type=float, default=0,
+                            help='Amount of time to pause display while testing.')
+        # Create instance variables directy from the arguments:
+        parser.parse_known_args(namespace=self)
+
+        # CREATE A FOLDER TO HOLD RESULTS
+        time_str = time.strftime("_%m-%d-%H-%M_", time.gmtime())
+        self.exp_dir = self.exp_pref + time_str + \
+                        "{}".format(self.learning_rate).replace(".", "p") + \
+                        "_" + "{}".format(self.discount).replace(".", "p")
+
+        try:
+            os.stat(self.exp_dir)
+        except:
+            os.makedirs(self.exp_dir)
+
+
+
+    def agent_init(self, task_spec_string):
+        """
+        This function is called once at the beginning of an experiment.
+
+        Arguments: task_spec_string - A string defining the task.  This string
+                                      is decoded using
+                                      TaskSpecVRLGLUE3.TaskSpecParser
+        """
+        # DO SOME SANITY CHECKING ON THE TASKSPEC
+        TaskSpec = TaskSpecVRLGLUE3.TaskSpecParser(task_spec_string)
+        if TaskSpec.valid:
+
+            assert ((len(TaskSpec.getIntObservations()) == 0) !=
+                    (len(TaskSpec.getDoubleObservations()) == 0)), \
+                "expecting continous or discrete observations.  Not both."
+            assert len(TaskSpec.getDoubleActions()) == 0, \
+                "expecting no continuous actions"
+            assert not TaskSpec.isSpecial(TaskSpec.getIntActions()[0][0]), \
+                " expecting min action to be a number not a special value"
+            assert not TaskSpec.isSpecial(TaskSpec.getIntActions()[0][1]), \
+                " expecting max action to be a number not a special value"
+            self.num_actions = TaskSpec.getIntActions()[0][1]+1
+        else:
+            print "INVALID TASK SPEC"
+
+        self.data_set = DataSet(width=CROPPED_WIDTH,
+                                             height=CROPPED_HEIGHT,
+                                             max_steps=self.max_history,
+                                             phi_length=self.phi_length)
+
+        # just needs to be big enough to create phi's
+        self.test_data_set = DataSet(width=CROPPED_WIDTH,
+                                                  height=CROPPED_HEIGHT,
+                                                  max_steps=10,
+                                                  phi_length=self.phi_length)
+        self.epsilon = self.epsilon_start
+        if self.epsilon_decay != 0:
+            self.epsilon_rate = .9 / self.epsilon_decay
+        else:
+            self.epsilon_rate = 0
+            
+
+        self.testing = False
+
+        if self.nn_file is None:
+            self.network = self._init_network()
+        else:
+            handle = open(self.nn_file, 'r')
+            self.network = cPickle.load(handle)
+
+        self._open_results_file()
+        self._open_learning_file()
+
+        self.step_counter = 0
+        self.episode_counter = 0
+        self.batch_counter = 0
+
+        self.holdout_data = None
+
+        # In order to add an element to the data set we need the
+        # previous state and action and the current reward.  These
+        # will be used to store states and actions.
+        self.last_img = None
+        self.last_action = None
+
+
+
+    def _init_network(self):
+        """
+        A subclass may override this if a different sort
+        of network is desired.
+        """
+        model = DeepQNetwork
+        model.add(Convolution2D(32, 3, 3, 3, border_mode='full'))
+        model.add(Activation('relu'))
+        model.add(Convolution2D(32, 32, 3, 3))
+        model.add(Activation('relu'))
+        model.add(MaxPooling2D(poolsize=(2, 2)))
+        model.add(Dropout(0.25))
+
+        model.add(Convolution2D(64, 32, 3, 3, border_mode='full'))
+        model.add(Activation('relu'))
+        model.add(Convolution2D(64, 64, 3, 3))
+        model.add(Activation('relu'))
+        model.add(MaxPooling2D(poolsize=(2, 2)))
+        model.add(Dropout(0.25))
+
+        model.add(Flatten())
+        model.add(Dense(64*8*8, 512, init='normal'))
+        model.add(Activation('relu'))
+        model.add(Dropout(0.5))
+
+        model.add(Dense(512, self.num_actions, init='normal'))
+        model.add(Activation('softmax'))
+
+        # let's train the model using SGD + momentum (how original).
+        sgd = SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)
+        model.compile(loss='categorical_crossentropy', optimizer=sgd)
+        return model
+        
+
+
+    def _open_results_file(self):
+        print "OPENING ", self.exp_dir + '/results.csv'
+        self.results_file = open(self.exp_dir + '/results.csv', 'w', 0)
+        self.results_file.write(\
+            'epoch,num_episodes,total_reward,reward_per_epoch,mean_q\n')
+
+    def _open_learning_file(self):
+        self.learning_file = open(self.exp_dir + '/learning.csv', 'w', 0)
+        self.learning_file.write('mean_loss,epsilon\n')
+
+    def _update_results_file(self, epoch, num_episodes, holdout_sum):
+        out = "{},{},{},{},{}\n".format(epoch, num_episodes, self.total_reward,
+                                  self.total_reward / float(num_episodes),
+                                  holdout_sum)
+        self.results_file.write(out)
+
+
+    def _update_learning_file(self):
+        out = "{},{}\n".format(np.mean(self.loss_averages),
+                               self.epsilon)
+        self.learning_file.write(out)
+
+
+    def agent_start(self, observation):
+        """
+        This method is called once at the beginning of each episode.
+        No reward is provided, because reward is only available after
+        an action has been taken.
+
+        Arguments:
+           observation - An observation of type rlglue.types.Observation
+
+        Returns:
+           An action of type rlglue.types.Action
+        """
+
+        self.step_counter = 0
+        self.batch_counter = 0
+
+        # We report the mean loss for every epoch.
+        self.loss_averages = []
+
+        self.start_time = time.time()
+        this_int_action = self.randGenerator.randint(0, self.num_actions-1)
+        return_action = Action()
+        return_action.intArray = [this_int_action]
+
+        self.last_action = copy.deepcopy(return_action)
+
+        self.last_img = self._resize_observation(observation.intArray)
+
+        return return_action
+
+
+    def _show_phis(self, phi1, phi2):
+        for p in range(self.phi_length):
+            plt.subplot(2, self.phi_length, p+1)
+            plt.imshow(phi1[p, :, :], interpolation='none', cmap="gray")
+            plt.grid(color='r', linestyle='-', linewidth=1)
+        for p in range(self.phi_length):
+            plt.subplot(2, self.phi_length, p+5)
+            plt.imshow(phi2[p, :, :], interpolation='none', cmap="gray")
+            plt.grid(color='r', linestyle='-', linewidth=1)
+        plt.show()
+
+    def _resize_observation(self, observation):
+        """
+        Resize observations to usable data
+        :param observation:
+        :return:
+        """
+        # reshape linear to original image size, skipping the RAM bit
+        image = observation[128:].reshape(IMAGE_HEIGHT, IMAGE_WIDTH, 3)
+        # convert from int32s
+        image = np.array(image, dtype="uint8")
+
+        # convert to greyscale
+        greyscaled = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+        # resize keeping aspect ratio
+        resize_width = CROPPED_WIDTH
+        resize_height = int(round(float(IMAGE_HEIGHT) * CROPPED_HEIGHT / 
+                                  IMAGE_WIDTH))
+
+        resized = cv2.resize(greyscaled, (resize_width, resize_height),
+        interpolation=cv2.INTER_LINEAR)
+
+        # Crop the part we want
+        crop_y_cutoff = resize_height - CROP_OFFSET - CROPPED_HEIGHT
+        cropped = resized[crop_y_cutoff:crop_y_cutoff + CROPPED_HEIGHT, :]
+
+        return cropped
+
+
+    def agent_step(self, reward, observation):
+        """
+        This method is called each time step.
+
+        Arguments:
+           reward      - Real valued reward.
+           observation - An observation of type rlglue.types.Observation
+
+        Returns:
+           An action of type rlglue.types.Action
+
+        """
+
+        self.step_counter += 1
+        return_action = Action()
+
+        cur_img = self._resize_observation(observation.intArray)
+
+        #TESTING---------------------------
+        if self.testing:
+            self.total_reward += reward
+            int_action = self._choose_action(self.test_data_set, .05,
+                                             cur_img, np.clip(reward, -1, 1))
+            if self.pause > 0:
+                time.sleep(self.pause)
+
+        #NOT TESTING---------------------------
+        else:
+            self.epsilon = max(self.epsilon_min, 
+                               self.epsilon - self.epsilon_rate)
+
+            int_action = self._choose_action(self.data_set, self.epsilon,
+                                             cur_img, np.clip(reward, -1, 1))
+
+            if len(self.data_set) > self.batch_size:
+                loss = self._do_training()
+                self.batch_counter += 1
+                self.loss_averages.append(loss)
+
+        return_action.intArray = [int_action]
+
+        self.last_action = copy.deepcopy(return_action)
+        self.last_img = cur_img
+
+        return return_action
+
+    def _choose_action(self, data_set, epsilon, cur_img, reward):
+        """
+        Add the most recent data to the data set and choose
+        an action based on the current policy.
+        """
+
+        data_set.add_sample(self.last_img,
+                            self.last_action.intArray[0],
+                            reward, False)
+        if self.step_counter >= self.phi_length:
+            phi = data_set.phi(cur_img)
+            int_action = self.network.choose_action(phi, epsilon)
+        else:
+            int_action = self.randGenerator.randint(0, self.num_actions - 1)
+        return int_action
+
+    def _do_training(self):
+        """
+        Returns the average loss for the current batch.
+        May be overridden if a subclass needs to train the network
+        differently.
+        """
+        states, actions, rewards, next_states, terminals = \
+                                self.data_set.random_batch(self.batch_size)
+        return self.network.train(states, actions, rewards,
+                                  next_states, terminals)
+
+
+    def agent_end(self, reward):
+        """
+        This function is called once at the end of an episode.
+
+        Arguments:
+           reward      - Real valued reward.
+
+        Returns:
+            None
+        """
+        self.episode_counter += 1
+        self.step_counter += 1
+        total_time = time.time() - self.start_time
+
+        if self.testing:
+            self.total_reward += reward
+        else:
+            print "Simulated at a rate of {}/s \n Average loss: {}".format(\
+                self.batch_counter/total_time,
+                np.mean(self.loss_averages))
+
+            self._update_learning_file()
+
+            # Store the latest sample.
+            self.data_set.add_sample(self.last_img,
+                                     self.last_action.intArray[0],
+                                     np.clip(reward, -1, 1),
+                                     True)
+
+
+    def agent_cleanup(self):
+        """
+        Called once at the end of an experiment.  We could save results
+        here, but we use the agent_message mechanism instead so that
+        a file name can be provided by the experiment.
+        """
+        pass
+
+    def agent_message(self, in_message):
+        """
+        The experiment will cause this method to be called.  Used
+        to save data to the indicated file.
+        """
+
+        #WE NEED TO DO THIS BECAUSE agent_end is not called
+        # we run out of steps.
+        if in_message.startswith("episode_end"):
+            self.agent_end(0)
+
+        elif in_message.startswith("finish_epoch"):
+            epoch = int(in_message.split(" ")[1])
+            net_file = open(self.exp_dir + '/network_file_' + str(epoch) + \
+                            '.pkl', 'w')
+            cPickle.dump(self.network, net_file, -1)
+            net_file.close()
+
+        elif in_message.startswith("start_testing"):
+            self.testing = True
+            self.total_reward = 0
+            self.episode_counter = 0
+
+        elif in_message.startswith("finish_testing"):
+            self.testing = False
+            holdout_size = 3200
+            epoch = int(in_message.split(" ")[1])
+
+            if self.holdout_data is None:
+                self.holdout_data = self.data_set.random_batch(holdout_size)[0]
+
+            holdout_sum = 0
+            for i in range(holdout_size):
+                holdout_sum += np.mean(
+                    self.network.q_vals(self.holdout_data[i, ...]))
+
+            self._update_results_file(epoch, self.episode_counter,
+                                      holdout_sum / holdout_size)
+        else:
+            return "I don't know how to respond to your message"
+
+def main():
+    AgentLoader.loadAgent(NeuralAgent())
