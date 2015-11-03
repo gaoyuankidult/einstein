@@ -59,7 +59,7 @@ class IncEnergyEnvironment(Environment):
         self.keylock = False
 
     def getSensors(self):
-        return [self.theta, self.thetadot, self.thetadotdot]
+        return [self.theta, self.thetadot]
 
     def getAlpha(self): # numerical simulation of the ODE
 
@@ -70,15 +70,7 @@ class IncEnergyEnvironment(Environment):
 
     def performAction(self, raw_actions):
         if self.keylock == False:
-            if int(self.t/self.dt) > 500:
-                self.act_force = float(raw_actions) * 10
-
-                if self.act_force >7:
-                    self.act_force = 7
-                elif self.act_force < -7:
-                    self.act_force = -7
-            else:
-                self.act_force = 0.0
+            self.act_force = float(raw_actions)
         self.step()
 
 
@@ -101,8 +93,6 @@ class IncEnergyEnvironment(Environment):
 
     def step(self):
         self.thetadotdot = self.getAlpha()[0] + self.act_force
-        self.control_cnt = 0
-
 
         self.thetadot += self.thetadotdot*self.dt
         self.theta += self.thetadot*self.dt
@@ -130,15 +120,20 @@ class IncEnergyTask(EpisodicTask):
     """ The task of balancing some pole(s) on a cart """
     def __init__(self, env=None):
         self.N = 10000
+        self.step_count = 0
+        self.show = False
+        if self.show:
+            self.display_init()
+        super(IncEnergyTask, self).__init__(env)
+
+    def display_init(self):
         pygame.init()
         pygame.mixer.init()
         self.screen = pygame.display.set_mode((512,512))
-        self.step_count = 0
+
 
         self.font = pygame.font.SysFont('lucida console',12)
         self.clock= pygame.time.Clock()
-
-        super(IncEnergyTask, self).__init__(env)
 
     def reset(self):
         super(IncEnergyTask, self).reset()
@@ -146,7 +141,8 @@ class IncEnergyTask(EpisodicTask):
 
     def performAction(self, action):
         if self.step_count == self.env.steps_per_update:
-            self.display();
+            if self.show:
+                self.display();
             self.stepcount=0
         else:
             self.step_count+=1
@@ -195,13 +191,14 @@ class IncEnergyTask(EpisodicTask):
         return False
 
 
+
 np.set_printoptions()
 
 # Number of transmitted variables
 N_TRANS = 5
 
 # Input features
-N_INPUT_FEATURES = 3
+N_INPUT_FEATURES = 2
 
 # Output Features
 N_ACTIONS = 1
@@ -241,23 +238,61 @@ def theano_form(list, shape):
     return array(list, dtype=theano.config.floatX).reshape(shape)
 
 
+
+coef = 50
+
+def makeact():
+    def push_left():
+        return -abs(np.random.randn(1)) -4
+    def push_right():
+        return abs(np.random.randn(1)) + 4
+    opt = np.random.randint(0, 2)
+    return [push_left, push_right,][opt]()
+
+
 def test_iteration(task, all_params):
+
+    global coef
     """
     Give current value of weights, output all rewards
     :return:
     """
+
+    def random_control():
+        control_cnt = 0
+        act_force = makeact()
+
+        while not task.isFinished():
+            if control_cnt != 500 :
+                control_cnt += 1
+            else:
+                act_force = makeact()
+                control_cnt = 0
+            task.performAction(act_force)
+
+    def no_control():
+        while not task.isFinished():
+            train_inputs = theano_form(task.getObservation(), shape=[N_BATCH, N_TIME_STEPS, N_INPUT_FEATURES])
+            actions = action_prediction(train_inputs)
+            task.performAction(actions)
+
+
     _all_params = lasagne.layers.get_all_params(l_action_2_formed)
     _all_params[0].set_value(theano_form(all_params[0:N_HIDDEN], shape=(N_HIDDEN, 1)))
     _all_params[1].set_value(theano_form(all_params[N_HIDDEN::], shape=(N_INPUT_FEATURES, N_HIDDEN)))
     task.reset()
-    while not task.isFinished():
-        train_inputs = theano_form(task.getObservation(), shape=[N_BATCH, N_TIME_STEPS, N_INPUT_FEATURES])
-        actions = action_prediction(train_inputs)
-        task.performAction(actions)
 
 
+    gamma_old = task.env.gamma
+    beta_old = task.env.beta
+    task.env.gamma = 0.2
+    task.env.beta = 0.2
+    task.env.theta = -np.pi/2
 
-    coef = 50 # the bigger the more data
+    no_control()
+
+
+     # the bigger the more data
     thetas = task.env.thetas[::int(task.steps/coef)]
     thetas = array(thetas).reshape(len(thetas), 1)
 
@@ -270,37 +305,52 @@ def test_iteration(task, all_params):
 
     plt.figure(1)
     plt.plot(cmreward)
-    plt.savefig("figure1")
+    plt.savefig("figure3")
+
+    task.env.gamma = gamma_old
+    task.env.beta = beta_old
 
     return flow
+
+def rotate_data(data):
+    if sum(np.diff(data, n=1, axis=0)) > 0:
+        return -data
+    else:
+        return data
+
 
 def one_iteration(task, all_params, flow):
     """
     Give current value of weights, output all rewards
     :return:
     """
+    global coef
     _all_params = lasagne.layers.get_all_params(l_action_2_formed)
     _all_params[0].set_value(theano_form(all_params[0:N_HIDDEN], shape=(N_HIDDEN, 1)))
     _all_params[1].set_value(theano_form(all_params[N_HIDDEN::], shape=(N_INPUT_FEATURES, N_HIDDEN)))
-    task.reset()
 
-    for theta in np.linspace(-np.pi/2, np.pi, 10):
+
+    all_cmreward = 0.0
+    plt.clf()
+    for theta in [-np.pi/2, np.pi/2]:
+        task.reset()
+        task.env.theta = theta
+        task.N= 10000
         while not task.isFinished():
             train_inputs = theano_form(task.getObservation(), shape=[N_BATCH, N_TIME_STEPS, N_INPUT_FEATURES])
             actions = action_prediction(train_inputs)
             task.performAction(actions)
-
-
-
-        coef = 35
         thetas = task.env.thetas[::int(task.steps/coef)]
         thetas = array(thetas).reshape(len(thetas), 1)
         cmreward = flow(thetas)
-        cmreward += min(cmreward)
 
+        plt.figure(2)
+        plt.plot(cmreward)
+        plt.savefig("figure4")
+        cmreward = np.diff(cmreward, n=1, axis=0) **2
+        all_cmreward += sum(cmreward)
 
-
-    return cmreward
+    return -all_cmreward
 
 def sample_parameter(sigma_list):
     """
@@ -324,9 +374,9 @@ def get_flow(thetas):
 
 def get_flow2(thetas):
     flow = (mdp.nodes.EtaComputerNode() +
-            mdp.nodes.TimeFramesNode(2) +
+            mdp.nodes.TimeFramesNode(3) +
             mdp.nodes.PolynomialExpansionNode(2) +
-            mdp.nodes.SFANode(output_dim=1) +
+            mdp.nodes.SFANode(output_dim=1, include_last_sample=False) +
             mdp.nodes.EtaComputerNode() )
     flow.train(thetas)
     return flow
@@ -418,7 +468,7 @@ if __name__ == "__main__":
     epsilon = 1 # initial number sigma
     sigma_list = ones(num_parameters) * epsilon
     deltas = sample_parameter(sigma_list=sigma_list)
-    best_reward = -1000
+    best_reward = -np.inf
 
     current = extract_parameter(params=all_params)
     arg_reward = []
@@ -432,10 +482,10 @@ if __name__ == "__main__":
 
          # current parameters
         deltas = sample_parameter(sigma_list=sigma_list)
-        reward1 = sum(one_iteration(task=task, all_params=current + deltas, flow=flow))
+        reward1 = one_iteration(task=task, all_params=current + deltas, flow=flow)
         if reward1 > best_reward:
             best_reward = reward1
-        reward2 = sum(one_iteration(task= task, all_params=current - deltas, flow=flow))
+        reward2 = one_iteration(task= task, all_params=current - deltas, flow=flow)
         if reward2 > best_reward:
             best_reward = reward2
         mreward = (reward1 + reward2) / 2.

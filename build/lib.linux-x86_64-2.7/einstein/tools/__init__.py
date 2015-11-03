@@ -7,7 +7,7 @@ from misc import theano_form
 from misc import check_list_depth
 from misc import make_chunks
 from misc import save_to_pickle_file
-from misc import load_pickle_file
+from misc import load_from_pickle_file
 from misc import array_form
 from misc import running_cumsum
 from misc import check_none_join

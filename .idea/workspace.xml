@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8e1b53ac-10fd-434d-ab3b-42ffb1bef5b6" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/Best/demo.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/mnist_exp.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/optimality_check.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_analysis.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_train.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping_best.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/SFA/sfa.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/RL/td.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/training.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/einstein/databank/twitter.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/examples/Unsuperised/Simulator/upright.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/clock_gated_rnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/clockwork_rnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_gru_data/deep_gru_analysis.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_gru_data/deep_gru_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_gru_enhanced.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_gru_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/deep_rnn_titan_black.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/detailed_gru.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dist/einstein-3.-py2.7.egg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/double_gated_gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/ALE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/pylearn2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04.tar.gz" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/ChangeLog" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/INSTALL" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/LICENSE-2.0.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/Makefile.am" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/Makefile.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/aclocal.m4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config.status" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/compile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/config.guess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/config.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/config.h.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/config.sub" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/depcomp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/install-sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/ltmain.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/missing" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/config/stamp-h1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/configure" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/configure.ac" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/Glue-Overview.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/Glue-Overview.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/TechnicalManual.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/TechnicalManual.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/Glue-Overview.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/Glue-Overview.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/WARNINGS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/crossref.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/glue_connections_no_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/images.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/images.idx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/images.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/images.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/images.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/img1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/internals.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/labels.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/nx_grp_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/prev_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/html/up_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/images/glue_connections_no_shadow.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/images/glue_connections_no_shadow.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/makeDocs.bash" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/TechnicalManual.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/TechnicalManual.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/WARNINGS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/crossref.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/images.aux" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/images.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/images.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/images.tex" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/img1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/img2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/internals.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/labels.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/nx_grp_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/prev_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/docs/tech_html/up_g.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/mines-sarsa-sample/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/mines-sarsa-sample/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/mines-sarsa-sample/SampleExperiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/mines-sarsa-sample/SampleMinesEnvironment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/mines-sarsa-sample/SampleSarsaAgent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/skeleton/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/skeleton/README.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/skeleton/SkeletonAgent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/skeleton/SkeletonEnvironment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/examples/skeleton/SkeletonExperiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/libtool" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlglue_la-RL_direct_agent.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlglue_la-RL_direct_environment.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlglue_la-RL_direct_experiment.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlglue_la-RL_glue.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlglue_la-RL_glue_debug.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlgluenetdev_la-RL_glue_debug.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlgluenetdev_la-RL_network.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlutils_la-RLStruct_util.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/librlutils_la-TaskSpec_Parser.Plo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_glue.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_network_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_network_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_network_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_network_glue.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_server_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_server_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.deps/rl_glue-RL_server_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue-3:0:0.so.3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue-3:0:0.so.3.0.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue.lai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue_la-RL_direct_agent.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue_la-RL_direct_environment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue_la-RL_direct_experiment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue_la-RL_glue.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlglue_la-RL_glue_debug.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev-0:0:0.so.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev-0:0:0.so.0.0.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev-0:0:0.so.0.0.0T" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev.lai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev_la-RL_glue_debug.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlgluenetdev_la-RL_network.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils-3:0:0.so.3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils-3:0:0.so.3.0.0" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils.a" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils.lai" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils.so" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils_la-RLStruct_util.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/librlutils_la-TaskSpec_Parser.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/.libs/rl_glue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/Makefile.am" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/Makefile.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RLStruct_util.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_direct_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_direct_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_direct_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_glue.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_glue_debug.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network_glue.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_network_glue.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_server_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_server_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/RL_server_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/TaskSpec_Parser.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_agent.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_agent.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_environment.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_environment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_experiment.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_direct_experiment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_glue.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_glue.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_glue_debug.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlglue_la-RL_glue_debug.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlgluenetdev.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlgluenetdev_la-RL_glue_debug.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlgluenetdev_la-RL_glue_debug.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlgluenetdev_la-RL_network.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlgluenetdev_la-RL_network.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlutils.la" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlutils_la-RLStruct_util.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlutils_la-RLStruct_util.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlutils_la-TaskSpec_Parser.lo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/librlutils_la-TaskSpec_Parser.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_glue.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_network_agent.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_network_environment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_network_experiment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_network_glue.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_server_agent.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_server_environment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue-RL_server_experiment.o" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rl_glue.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/Agent_common.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/Environment_common.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/RL_common.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/RL_glue.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/network/RL_network.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/utils/C/RLStruct_util.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/src/rlglue/utils/C/TaskSpec_Parser.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_1-test_1_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_1-test_1_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_1-test_1_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_1-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_empty-test_empty_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_empty-test_empty_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_empty-test_empty_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_empty-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_init_cleanup-test_1_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_init_cleanup-test_1_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_init_cleanup-test_init_cleanup_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_init_cleanup-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_message-test_message_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_message-test_message_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_message-test_message_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_message-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_rl_episode-test_1_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_rl_episode-test_1_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_rl_episode-test_rl_episode_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_rl_episode-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_sanity-test_1_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_sanity-test_1_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_sanity-test_sanity_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_sanity-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_speed-test_1_agent.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_speed-test_speed_environment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_speed-test_speed_experiment.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/.deps/test_speed-useful_functions.Po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/Makefile" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/Makefile.am" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/Makefile.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_1_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_1_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_1_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_empty_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_empty_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_empty_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_init_cleanup_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_message_agent.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_message_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_message_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_rl_episode_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_sanity_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_speed_environment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/test_speed_experiment.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/useful_functions.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-3.04/tests/useful_functions.h" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/build/rlglue-py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/_05-20-12-19_0p0002_0p95/learning.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/_05-20-12-19_0p0002_0p95/results.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/_05-20-12-32_0p0002_0p95/learning.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/_05-20-12-32_0p0002_0p95/results.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/ale_data_set.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/ale_run.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/ale_run_watch.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/cc_layers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/cnn_q_learner.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/layers.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/plot_filters.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/plot_results.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/rl_glue_ale_agent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/rl_glue_ale_experiment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/setup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/shift.pyx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/deep_q_rl/stellarc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_agent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/__init__.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/cPickle" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/copy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/deep_q_network.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/dqn_agent.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/dqn_project.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/os" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/rl_glue_ale_experiment.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/shift.pyx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/dqn_src/stellarc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/roms/breakout.bin" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/dqn/roms/rom_link.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/einstein.egg-info/PKG-INFO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/einstein.egg-info/SOURCES.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/einstein.egg-info/dependency_links.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/einstein.egg-info/top_level.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/gru_data/gru_analysis.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/gru_data/gru_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/lstm.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/lstm_titan_black.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/lstm_titan_x.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/nn_mnist.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/parameter_gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/prime_deep_gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/record_parameter_gru.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/rnn_titan_x.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/rnn_titan_x.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/sequence_generation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit3.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit_2_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit_3_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit_clockwork_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_gated_unit_record.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/simple_rnn.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/stacked_gru.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/stacked_gru.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/stacked_sgu.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/stacked_simple_gated_unit.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/test.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/test2.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/examples/to_be_removed.txt" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/examples/__init__.py" afterPath="$PROJECT_DIR$/einstein/databank/test_twitter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/einstein-3.-py2.7.egg" afterPath="$PROJECT_DIR$/dist/einstein-3.-py2.7.egg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/src/keras" afterPath="$PROJECT_DIR$/einstein/src/keras" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein.egg-info/SOURCES.txt" afterPath="$PROJECT_DIR$/einstein.egg-info/SOURCES.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/databank/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/databank/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/fileio/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/fileio/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/layers/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/layers/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/preprocessing/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/preprocessing/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/tools/__init__.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/tools/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/__init__.py" afterPath="$PROJECT_DIR$/einstein/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/databank/__init__.py" afterPath="$PROJECT_DIR$/einstein/databank/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/fileio/__init__.py" afterPath="$PROJECT_DIR$/einstein/fileio/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/layers/__init__.py" afterPath="$PROJECT_DIR$/einstein/layers/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/preprocessing/__init__.py" afterPath="$PROJECT_DIR$/einstein/preprocessing/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/tools/__init__.py" afterPath="$PROJECT_DIR$/einstein/tools/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/clock_gated_rnn.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/clock_gated_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/clockwork_rnn.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/clockwork_rnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/tools/misc.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/tools/misc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/tools/misc.py" afterPath="$PROJECT_DIR$/einstein/tools/misc.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/plot/plots.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/plot/plots.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/plot/plots.py" afterPath="$PROJECT_DIR$/einstein/plot/plots.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/layers/recurrent.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/layers/recurrent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/layers/recurrent.py" afterPath="$PROJECT_DIR$/einstein/layers/recurrent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/models/sequential.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/einstein/models/sequential.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein/models/sequential.py" afterPath="$PROJECT_DIR$/einstein/models/sequential.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/simple_gated_unit2.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/simple_gated_unit2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/test.py" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/examples/test.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/einstein.egg-info/top_level.txt" afterPath="$PROJECT_DIR$/einstein.egg-info/top_level.txt" />
+    </list>
+    <ignored path="einstein.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="einstein">
+      <favorite_root url="file://$PROJECT_DIR$/einstein/tasks/__init__.py" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="pgpe.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.4624374" vertical-offset="6173" max-vertical-offset="7335">
+              <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
+              <folding>
+                <element signature="e#270#283#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="upright.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/upright.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="6555" max-vertical-offset="8025">
+              <caret line="437" column="19" selection-start-line="437" selection-start-column="19" selection-end-line="437" selection-end-column="19" />
+              <folding>
+                <element signature="e#270#283#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pgpe_dumping_best.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping_best.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3938" max-vertical-offset="6930">
+              <caret line="243" column="8" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="optimality_check.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/optimality_check.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2963" max-vertical-offset="4440">
+              <caret line="205" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="290" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="demo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/Best/demo.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="4845">
+              <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/einstein/fileio/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1050">
+              <caret line="63" column="19" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/einstein/tools/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="585">
+              <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="misc.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/einstein/tools/misc.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="446" max-vertical-offset="1455">
+              <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sfa.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/examples/Unsuperised/SFA/sfa.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="900">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="e#83#93#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/einstein/databank/test_twitter.py" />
+        <option value="$PROJECT_DIR$/examples/Twitter/gru.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/sgu_255_sigmoid_lr=1e-2.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/gru_255_sigmoid_lr=1e-3.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/dsgu_255_sigmoird_lr=1e-3.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/sgu_255_sigmoid_lr=1e-3.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/dsgu_255_sigmoid_lr=1e-3.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/sgu_255_sigmoid_lr=1e-3_adam.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/gru_255_sigmoid_lr=1e-3_adam.py" />
+        <option value="$PROJECT_DIR$/einstein/databank/twitter.py" />
+        <option value="$PROJECT_DIR$/einstein/databank/__init__.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/dsgu_255_sigmoid_lr=1e-3_adam.py" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/dsgu_255_sigmoid_lr=1e-3.txt" />
+        <option value="$PROJECT_DIR$/examples/BinaryMNIST/irnn_255_adam.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/irnn_255_adam.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/irnn_adam.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/irnn_lr=1e-3.py" />
+        <option value="$PROJECT_DIR$/examples/TextGeneration/sgu.py" />
+        <option value="$PROJECT_DIR$/examples/TextGeneration/single_sgu.py" />
+        <option value="$PROJECT_DIR$/examples/TextGeneration/singel_dsgu.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/dsgu_adam_255.py" />
+        <option value="$PROJECT_DIR$/examples/TextGeneration/single_dsgu.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/dsgu_permuted_adam_255_more_iter.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/dsgu_adam_255_more_iter.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/sgu_adam_more_iter.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/sgu_adam_255.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/gru_adam_255.py" />
+        <option value="$PROJECT_DIR$/einstein/layers/recurrent.py" />
+        <option value="$PROJECT_DIR$/examples/MNIST/paper_plot.py" />
+        <option value="$PROJECT_DIR$/einstein/preprocessing/pca.py" />
+        <option value="$PROJECT_DIR$/../TempUSB/Researches/CerebellumLearning/Codes/IncSFA/test_incsfa.py" />
+        <option value="$PROJECT_DIR$/einstein/preprocessing/pca/__init__.py" />
+        <option value="$PROJECT_DIR$/einstein/preprocessing/__init__.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/SFA.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/SFA/SFA.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/SFA/sfa.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/SImulators/pendulum.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_train.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/mnist_exp.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/training.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_analysis.py" />
+        <option value="$PROJECT_DIR$/examples/RL/td.py" />
+        <option value="$PROJECT_DIR$/einstein/fileio/__init__.py" />
+        <option value="$PROJECT_DIR$/einstein/tools/misc.py" />
+        <option value="$PROJECT_DIR$/einstein/tools/__init__.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/optimality_check.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/Best/demo.py" />
+        <option value="$PROJECT_DIR$/examples/Unsuperised/Simulator/upright.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
+    <option name="y" value="24" />
+    <option name="width" value="1602" />
+    <option name="height" value="853" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Python</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Unsuperised" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Simulator" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Unsuperised" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="examples" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tasks" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einstein" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="options.splitter.main.proportions" value="0.3" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TempUSB/Researches/CerebellumLearning/Codes/IncSFA/test_incsfa.py" />
+    <property name="recentsLimit" value="5" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/Unsuperised/Simulator" />
+      <recent name="$PROJECT_DIR$/einstein/tasks" />
+      <recent name="$PROJECT_DIR$/einstein/environments" />
+      <recent name="$PROJECT_DIR$/examples" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples/Unsuperised/sfa" />
+      <recent name="$PROJECT_DIR$/examples/Unsuperised/SFA" />
+      <recent name="$PROJECT_DIR$/examples/RNN" />
+      <recent name="$PROJECT_DIR$/examples/MNIST" />
+      <recent name="$PROJECT_DIR$/examples/IMDBNewModels" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.paper_plot">
+    <configuration default="false" name="deep_gru" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/deep_gru.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="deep_gru_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="THEANO_FLAGS" value="mode=FAST_RUN,device=gpu1,floatX=float32" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/rnntools/theano-venv/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/deep_gru_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/deep_gru_data/deep_gru_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="gru_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="" value="" />
+        <env name="THEANO_FLAGS" value="mode=FAST_RUN,device=gpu0,floatX=float32" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/gru_data" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/gru_data/gru_analysis.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="parameter_gru" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="THEANO_FLAGS" value="mode=FAST_RUN,device=gpu0,floatX=float32" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/parameter_gru.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="paper_plot" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="THEANO_FLAGS" value="mode=FAST_RUN,device=gpu1,floatX=float32" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/rnntools/theano-venv/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/examples/MNIST" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/examples/MNIST/paper_plot.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="THEANO_FLAGS" value="mode=FAST_RUN,device=gpu1,floatX=float32" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/rnntools/theano-venv/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="einstein" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.deep_gru" />
+      <item index="1" class="java.lang.String" itemvalue="Python.deep_gru_analysis" />
+      <item index="2" class="java.lang.String" itemvalue="Python.gru_analysis" />
+      <item index="3" class="java.lang.String" itemvalue="Python.parameter_gru" />
+      <item index="4" class="java.lang.String" itemvalue="Python.paper_plot" />
+    </list>
+    <recent_temporary>
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.paper_plot" />
+        <item index="1" class="java.lang.String" itemvalue="Python.parameter_gru" />
+        <item index="2" class="java.lang.String" itemvalue="Python.gru_analysis" />
+        <item index="3" class="java.lang.String" itemvalue="Python.deep_gru" />
+        <item index="4" class="java.lang.String" itemvalue="Python.deep_gru_analysis" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8e1b53ac-10fd-434d-ab3b-42ffb1bef5b6" name="Default" comment="" />
+      <created>1431958780695</created>
+      <option name="number" value="Default" />
+      <updated>1431958780695</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-1" y="24" width="1602" height="853" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24980454" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16021362" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28037384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32295194" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="myTodoPanelSettings">
+      <TodoPanelSettings />
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/examples/RNN/MNIST/irnn.py</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="16" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/examples/RNN/MNIST/gru.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="1185">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RNN/MNIST/sgu_adam_255.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="348" max-vertical-offset="1335">
+          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RNN/MNIST/sgu_adam_more_iter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="37" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RNN/MNIST/gru_adam_255.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1395">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RNN/BinaryMNIST/dsgu_255_sigmoid_lr=1e-3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1515">
+          <caret line="15" column="62" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TempUSB/Researches/CerebellumLearning/Codes/IncSFA/signalstats.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1425">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TempUSB/Researches/CerebellumLearning/Codes/IncSFA/test_incsfa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="3450">
+          <caret line="27" column="85" selection-start-line="27" selection-start-column="85" selection-end-line="27" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../TempUSB/Researches/CerebellumLearning/Codes/IncSFA/ccipca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3180">
+          <caret line="28" column="10" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/preprocessing/ccipca.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3165">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/preprocessing/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.2168508" vertical-offset="0" max-vertical-offset="1995">
+          <caret line="107" column="15" selection-start-line="107" selection-start-column="15" selection-end-line="107" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/preprocessing/test_incsfa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3405">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/preprocessing/incsfa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1890" max-vertical-offset="3915">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/preprocessing/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm40/system/python_stubs/1845290865/pygame/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4359" max-vertical-offset="4965">
+          <caret line="308" column="0" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/y_positions.pickle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6045">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/x_positions.pickle">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6045">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/times.pickle">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/thetasdots.pickle">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6555">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/thetasdotdots.pickle">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="89505">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/thetas.pickle">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6555">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="606">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/local/lib/python2.7/site-packages/numpy/linalg/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4526112" vertical-offset="15983" max-vertical-offset="32130">
+          <caret line="981" column="4" selection-start-line="981" selection-start-column="4" selection-end-line="981" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/src/keras/keras/layers/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3326886" vertical-offset="5633" max-vertical-offset="12945">
+          <caret line="402" column="8" selection-start-line="402" selection-start-column="8" selection-end-line="402" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/mnist_exp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="233" max-vertical-offset="885">
+          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="467">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/actions/experiement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1245">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/training.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21814671" vertical-offset="157" max-vertical-offset="945">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/local/lib/python2.7/site-packages/lasagne/layers/shape.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="158" max-vertical-offset="3855">
+          <caret line="65" column="8" selection-start-line="65" selection-start-column="8" selection-end-line="65" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/tasks/robot_tasks.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.042471044" vertical-offset="22" max-vertical-offset="900">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/environments/robot_environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1005">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/local/lib/python2.7/site-packages/pybrain/rl/environments/cartpole/balancetask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="2775">
+          <caret line="51" column="31" selection-start-line="51" selection-start-column="31" selection-end-line="51" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/local/lib/python2.7/site-packages/pybrain/rl/environments/episodic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="371" max-vertical-offset="1170">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/local/lib/python2.7/site-packages/pybrain/rl/environments/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1305">
+          <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RNN/IMDB/dqn/build/rlglue-py/rlglue/network/Network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2621" max-vertical-offset="3870">
+          <caret line="193" column="8" selection-start-line="193" selection-start-column="8" selection-end-line="193" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/src/keras/keras/layers/recurrent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.118530884" vertical-offset="4526" max-vertical-offset="12195">
+          <caret line="305" column="0" selection-start-line="305" selection-start-column="0" selection-end-line="305" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/layers/recurrent.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07512521" vertical-offset="1710" max-vertical-offset="10920">
+          <caret line="125" column="20" selection-start-line="125" selection-start-column="20" selection-end-line="125" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1485" max-vertical-offset="2100">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/src/mdp/mdp/nodes/sfa_nodes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.8564274" vertical-offset="2716" max-vertical-offset="4845">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/RL/td.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.6527545" vertical-offset="0" max-vertical-offset="1080">
+          <caret line="66" column="16" selection-start-line="66" selection-start-column="16" selection-end-line="66" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../einstein_venv/src/mdp/mdp/nodes/misc_nodes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9532554" vertical-offset="11476" max-vertical-offset="12255">
+          <caret line="727" column="0" selection-start-line="727" selection-start-column="0" selection-end-line="727" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/tools/misc.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="446" max-vertical-offset="1455">
+          <caret line="43" column="4" selection-start-line="43" selection-start-column="4" selection-end-line="43" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/tools/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/einstein/fileio/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1050">
+          <caret line="63" column="19" selection-start-line="63" selection-start-column="15" selection-end-line="63" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/SFA/sfa.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="900">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#83#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pendulum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2397869" vertical-offset="2992" max-vertical-offset="4050">
+          <caret line="251" column="71" selection-start-line="251" selection-start-column="69" selection-end-line="251" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/optimality_check.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2963" max-vertical-offset="4440">
+          <caret line="205" column="33" selection-start-line="0" selection-start-column="0" selection-end-line="290" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/Best/demo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1313" max-vertical-offset="4845">
+          <caret line="121" column="49" selection-start-line="121" selection-start-column="49" selection-end-line="121" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping_best.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3938" max-vertical-offset="6930">
+          <caret line="243" column="8" selection-start-line="243" selection-start-column="4" selection-end-line="243" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/upright.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="8025">
+          <caret line="437" column="19" selection-start-line="437" selection-start-column="19" selection-end-line="437" selection-end-column="19" />
+          <folding>
+            <element signature="e#270#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe_dumping.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2621035" vertical-offset="4733" max-vertical-offset="8025">
+          <caret line="326" column="15" selection-start-line="0" selection-start-column="0" selection-end-line="529" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/Unsuperised/Simulator/pgpe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4624374" vertical-offset="6173" max-vertical-offset="7335">
+          <caret line="430" column="27" selection-start-line="430" selection-start-column="27" selection-end-line="430" selection-end-column="27" />
+          <folding>
+            <element signature="e#270#283#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

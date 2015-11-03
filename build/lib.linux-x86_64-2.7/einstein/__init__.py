@@ -3,7 +3,7 @@ __author__ = 'gao'
 from einstein.layers import initializations
 import tools
 import tasks
-import environments
+#import environments
 import actions
 import optimizers
 import layers

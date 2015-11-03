@@ -5,10 +5,10 @@ import numpy as np
 from keras.preprocessing import sequence
 from keras.optimizers import SGD, RMSprop, Adagrad
 from keras.utils import np_utils
-from keras.models import Sequential
+from einstein.models import Sequential
 from keras.layers.core import Dense, Dropout, Activation
 from keras.layers.embeddings import Embedding
-from einstein.layers import ClockworkRNN, ClockworkGatedRNN
+from einstein.layers.recurrent import LSTM, StackableGRU, StackableSGU, SGUModified1, DSGU, SGU, ClockworkGRU, ClockworkSGU
 from keras.datasets import imdb
 
 import einstein as E
@@ -54,7 +54,7 @@ print('X_test shape:', X_test.shape)
 print('Build model...')
 model = Sequential()
 model.add(Embedding(max_features, 256))
-model.add(ClockworkGatedRNN(periods=[1], input_dim=256,  output_dim=128)) # try using a GRU instead, for fun
+model.add(ClockworkSGU(periods=[1, 2], input_dim=256,  output_dim=128)) # try using a GRU instead, for fun
 model.add(Dense(128, 1))
 model.add(Activation('sigmoid'))
 
@@ -62,7 +62,7 @@ model.add(Activation('sigmoid'))
 model.compile(loss='binary_crossentropy', optimizer='adam', class_mode="binary")
 
 print("Train...")
-history = model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=10, validation_split=0.1, show_accuracy=True)
+history, validation_records, records_time = model.fit(X_train, y_train, batch_size=batch_size, nb_epoch=3, validation_split=0.1, show_accuracy=True)
 score = model.evaluate(X_test, y_test, batch_size=batch_size)
 print('Test score:', score)
 

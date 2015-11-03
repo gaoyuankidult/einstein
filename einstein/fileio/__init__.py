@@ -1,3 +1,9 @@
+from einstein.tools import save_to_pickle_file
+from einstein.tools import load_from_pickle_file
+
+
+
+
 def pattern_extraction_from_file(read_filename="", write_filename="", iter_dict = None, *args):
     """
     extract patterns from file and save lines that contains that pattern in to another file
@@ -35,12 +41,24 @@ def pattern_extraction_from_file(read_filename="", write_filename="", iter_dict 
 
 class FileIO(object):
 
-    def __init__(self, filename):
+    def __init__(self):
         super(FileIO, self).__init__()
+
+    def openfile(self, filename):
         self.filename = filename
         self.f = open(self.filename, 'w')
+
     def save_line(self, value):
         self.f.write(str(value) + '\n')
 
-    def __del__(self):
-        self.f.close()
+    def closefile(self):
+        try:
+            self.f.close()
+        except AttributeError:
+            print("AttributeError: probably you didn't open file first. ")
+
+    def save_pickle(self, data, filename):
+        save_to_pickle_file(data, filename)
+
+    def load_pickle(self, filename):
+        return load_from_pickle_file(filename)

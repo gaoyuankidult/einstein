@@ -45,7 +45,7 @@ def save_to_pickle_file(data, file_name):
     with open('%s.pickle' % file_name, 'wb') as handle:
         dump(data, handle)
 
-def load_pickle_file(file_name):
+def load_from_pickle_file(file_name):
     with open('%s.pickle' % file_name, 'rb') as handle:
         data = load(handle)
     return data
@@ -84,7 +84,7 @@ class TestPickleMethods(unittest.TestCase):
         data = [1, 2, 3]
         file_name = "pickle_test"
         save_to_pickle_file(data, file_name)
-        self.assertEqual(data, load_pickle_file(file_name))
+        self.assertEqual(data, load_from_pickle_file(file_name))
 
 
 
