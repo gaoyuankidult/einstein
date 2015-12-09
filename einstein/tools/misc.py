@@ -37,27 +37,19 @@ def check_list_depth(seq):
 def make_chunks(lst, n):
     """ Yield successive n-sized chunks from l.
     """
-<<<<<<< HEAD
-    for i in xrange(0, len(lst), n):
-        yield lst[i:i+n]
-=======
     dim = len(lst[0])
     l = ([[0] * dim] * (n-1))
     l.extend(lst)
     for i in xrange(0, len(l)- n + 1, 1):
         yield l[i:i+n]
->>>>>>> 21c5a6a5b15be02716243cb1dc1065a0e8ee4ce2
 
 
 def save_to_pickle_file(data, file_name):
     with open('%s.pickle' % file_name, 'wb') as handle:
         dump(data, handle)
 
-<<<<<<< HEAD
-def load_from_pickle_file(file_name):
-=======
+
 def load_pickle_file(file_name):
->>>>>>> 21c5a6a5b15be02716243cb1dc1065a0e8ee4ce2
     with open('%s.pickle' % file_name, 'rb') as handle:
         data = load(handle)
     return data
@@ -96,13 +88,7 @@ class TestPickleMethods(unittest.TestCase):
         data = [1, 2, 3]
         file_name = "pickle_test"
         save_to_pickle_file(data, file_name)
-<<<<<<< HEAD
-        self.assertEqual(data, load_from_pickle_file(file_name))
-=======
         self.assertEqual(data, load_pickle_file(file_name))
->>>>>>> 21c5a6a5b15be02716243cb1dc1065a0e8ee4ce2
-
-
 
 if __name__ == "__main__":
     unittest.main()
