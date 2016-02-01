@@ -26,3 +26,7 @@ pip install git+https://github.com/craffel/nntools.git
 ```
 pip install pyzmq
 ```
+### Install pygame
+```
+conda install -c https://conda.anaconda.org/tlatorre pygame
+```
