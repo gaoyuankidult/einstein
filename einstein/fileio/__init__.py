@@ -1,5 +1,5 @@
-from einstein.tools import save_to_pickle_file
-from einstein.tools import load_from_pickle_file
+from einstein.tools import save_pickle_file
+from einstein.tools import load_pickle_file
 
 
 
@@ -58,7 +58,7 @@ class FileIO(object):
             print("AttributeError: probably you didn't open file first. ")
 
     def save_pickle(self, data, filename):
-        save_to_pickle_file(data, filename)
+        save_pickle_file(data, filename)
 
     def load_pickle(self, filename):
-        return load_from_pickle_file(filename)
+        return load_pickle_file(filename)
