@@ -44,7 +44,7 @@ def make_chunks(lst, n):
         yield l[i:i+n]
 
 
-def save_to_pickle_file(data, file_name):
+def save_pickle_file(data, file_name):
     with open('%s.pickle' % file_name, 'wb') as handle:
         dump(data, handle)
 

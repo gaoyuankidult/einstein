@@ -14,7 +14,6 @@ from misc import check_none_join
 from data_structures import RingBuffer
 
 from keras.utils import np_utils
-from keras.utils import theano_utils
 
 from numpy import random
 from numpy import array

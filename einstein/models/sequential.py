@@ -14,7 +14,7 @@ from keras import constraints
 from keras.models import Sequential
 from keras import callbacks as cbks
 import time, copy
-from keras.utils.generic_utils import Progbar, printv
+from keras.utils.generic_utils import Progbar
 from six.moves import range
 
 

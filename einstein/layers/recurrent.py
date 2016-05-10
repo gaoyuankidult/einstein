@@ -1,8 +1,6 @@
 from __future__ import print_function
-from keras.layers.recurrent import LSTM, GRU, SimpleDeepRNN, Layer ,SimpleRNN, JZS1, JZS2, JZS3
+from keras.layers.recurrent import LSTM, GRU, Layer ,SimpleRNN
 from keras import activations, initializations
-from einstein.layers.initializations import identity
-from keras.utils.theano_utils import shared_zeros, alloc_zeros_matrix
 import theano.tensor as TT
 import theano
 
