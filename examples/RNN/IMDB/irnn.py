@@ -9,7 +9,7 @@ from keras.preprocessing import sequence
 from keras.optimizers import SGD, RMSprop, Adagrad
 from keras.utils import np_utils
 from keras.models import Sequential
-from keras.initializations import normal, identity
+from keras.initializers import normal, identity
 from keras.layers.core import Dense, Dropout, Activation
 from keras.layers.embeddings import Embedding
 from keras.layers.recurrent import LSTM, GRU, SimpleRNN
@@ -43,7 +43,7 @@ maxlen = 100 # cut texts after this number of words (among top max_features most
 batch_size = 16
 
 print("Loading data...")
-(X_train, y_train), (X_test, y_test) = imdb.load_data(nb_words=max_features, test_split=0.2)
+(X_train, y_train), (X_test, y_test) = imdb.load_data(nb_words=max_features)
 print(len(X_train), 'train sequences')
 print(len(X_test), 'test sequences')
 

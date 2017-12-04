@@ -1,3 +1,0 @@
-from pybrain.rl.environments.cartpole import CartPoleEnvironment as RealCartPoleEnvironment
-from simulated_environments import SimCartPoleEnvironment
-from robot_environment import BaxterEnvironment

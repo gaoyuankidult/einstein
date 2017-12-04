@@ -7,7 +7,7 @@ import keras
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers.core import Dense, Activation
-from keras.initializations import normal, identity
+from keras.initializers import normal, identity
 from keras.layers.recurrent import SimpleRNN, LSTM
 from keras.optimizers import RMSprop
 from keras.utils import np_utils

@@ -1,3 +1,4 @@
+README.md
 setup.py
 einstein/__init__.py
 einstein.egg-info/PKG-INFO
@@ -39,8 +40,6 @@ einstein/models/deepqnetwork.py
 einstein/models/info.py
 einstein/models/sequential.py
 einstein/models/visuomotor.py
-einstein/optimizer/__init__.py
-einstein/optimizer/grad_methods.py
 einstein/optimizers/__init__.py
 einstein/optimizers/grad_methods.py
 einstein/plot/__init__.py
