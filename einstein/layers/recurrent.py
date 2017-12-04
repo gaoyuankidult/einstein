@@ -1,6 +1,6 @@
 from __future__ import print_function
 from keras.layers.recurrent import LSTM, GRU, Layer ,SimpleRNN
-from keras import activations, initializations
+from keras import activations, initializers
 import theano.tensor as TT
 import theano
 
